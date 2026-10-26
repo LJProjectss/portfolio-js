@@ -70,6 +70,7 @@ const nl = {
   'proj.all': "Alles",
   'proj.wl': "Film-watchlist",
   'proj.wl.p': "Installeerbare webapp om films, series en anime bij te houden: geef een cijfer van 1 tot 10, vink afleveringen af en zie wat binnenkort uitkomt en waar je het in Nederland kunt streamen. Met pushmeldingen bij nieuwe afleveringen.",
+  'proj.live': "Bekijk live",
   'proj.src': "Broncode op GitHub",
   'proj.hub.p': "Eén thuis-hub die drie van mijn eigen apps samenbrengt op één site: een huishoudboekje, een vermogensoverzicht en een onderhoudslogboek, met Google Drive-synchronisatie en automatische tests.",
   'proj.pf': "Dit portfolio",
