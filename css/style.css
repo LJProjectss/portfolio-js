@@ -179,7 +179,10 @@ section.block { padding-block: clamp(3.5rem, 8vw, 6rem); border-top: 1px solid v
   border: 1px solid var(--line); background: transparent; color: var(--muted);
 }
 .filters button[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
-.projects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+.projects { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1.25rem; }
+.proj { grid-column: span 2; }
+.proj.featured { grid-column: span 3; }
+.proj.featured .thumb { aspect-ratio: 16 / 8; }
 .proj {
   min-width: 0; display: grid; grid-template-rows: auto 1fr; border-radius: 14px; overflow: hidden;
   background: var(--surface); border: 1px solid var(--line); transition: transform .2s, border-color .2s;
@@ -188,6 +191,7 @@ section.block { padding-block: clamp(3.5rem, 8vw, 6rem); border-top: 1px solid v
 .thumb { aspect-ratio: 16 / 10; max-width: 100%; display: grid; place-items: center; position: relative; overflow: hidden; }
 .thumb.t1 { background: linear-gradient(135deg, var(--channel), color-mix(in srgb, var(--channel) 55%, var(--bg))); }
 .thumb.t2 { background: linear-gradient(135deg, var(--buoy), color-mix(in srgb, var(--buoy) 50%, var(--bg))); }
+.thumb.t4 { background: linear-gradient(135deg, var(--channel), var(--buoy)); }
 .thumb.t3 { background: linear-gradient(135deg, var(--ink), color-mix(in srgb, var(--ink) 60%, var(--channel))); }
 .thumb span { font: 800 clamp(1.4rem, 3vw, 2rem)/1 var(--f-display); color: var(--bg); letter-spacing: -.02em; opacity: .95; }
 .thumb .badge { position: absolute; top: .75rem; left: .75rem; font: 500 .72rem/1 var(--f-mono); padding: .35rem .55rem; border-radius: 6px; background: var(--bg); color: var(--ink); }
@@ -213,7 +217,12 @@ footer.foot .wrap { display: flex; flex-wrap: wrap; justify-content: space-betwe
   .hero .wrap, .about-grid, .tracks { grid-template-columns: 1fr; }
   .code-card { transform: none; }
   .skill-groups, .projects { grid-template-columns: 1fr 1fr; }
+  .proj, .proj.featured { grid-column: auto; }
+  .proj:last-child:nth-child(odd) { grid-column: 1 / -1; }
+  .proj:last-child:nth-child(odd) .thumb { aspect-ratio: 16 / 6; }
 }
 @media (max-width: 600px) {
   .skill-groups, .projects { grid-template-columns: 1fr; }
+  .proj:last-child:nth-child(odd) { grid-column: auto; }
+  .proj:last-child:nth-child(odd) .thumb { aspect-ratio: 16 / 10; }
 }
